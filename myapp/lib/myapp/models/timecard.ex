@@ -1,4 +1,7 @@
 defmodule Myapp.Model.TimeCard do
+  @moduledoc """
+  Model timecard.
+  """
   use Ecto.Schema
   use Timex
   import Ecto.Changeset
@@ -13,11 +16,11 @@ defmodule Myapp.Model.TimeCard do
   end
 
   @doc """
-  A time changeset for registration.
+  timecard changeset for registration.
   """
-  def changeset(time, attrs) do
+  def changeset(time, params) do
     time
-    |> cast(attrs, [:date, :start_time, :end_time, :weekday])
+    |> cast(params, [:date, :start_time, :end_time, :weekday])
     |> validate_required(:date)
     |> unsafe_validate_unique(:date, Myapp.Repo, message: "already registered.")
     |> validate_required(:weekday)

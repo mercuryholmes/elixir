@@ -27,29 +27,29 @@ defmodule TimeCard do
     end
   end
 
-  defp save_time(:register, param) do
-    case register_time(param) do
+  defp save_time(:register, params) do
+    case register_time(params) do
       {:ok, _time}  -> {:ok, "save time card successfully"}
       {:error, %Ecto.Changeset{} = changeset} -> {:error, changeset.errors}
     end
   end
 
-  defp save_time(:update, time, param) do
-    case update_time(time, param) do
+  defp save_time(:update, time, params) do
+    case update_time(time, params) do
       {:ok, _time}  -> {:ok, "update time card successfully"}
       {:error, %Ecto.Changeset{} = changeset} -> {:error, changeset.errors}
     end
   end
 
-  defp register_time(attrs) do
+  defp register_time(params) do
     %TimeCard{}
-    |> TimeCard.changeset(attrs)
+    |> TimeCard.changeset(params)
     |> Repo.insert()
   end
 
-  defp update_time(%TimeCard{} = time, attrs) do
+  defp update_time(%TimeCard{} = time, params) do
     time
-    |> TimeCard.changeset(attrs)
+    |> TimeCard.changeset(params)
     |> Repo.update()
   end
 

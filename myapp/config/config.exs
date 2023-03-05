@@ -5,4 +5,5 @@ config :myapp, Myapp.Repo,
   database: "myapp",
   username: "postgres",
   password: "postgres",
-  migration_timestamps: [type: :timestamptz]
+  migration_timestamps: [type: :timestamptz],
+  log: false

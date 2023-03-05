@@ -1,7 +1,7 @@
 
-defmodule ExportTimeCard do
+defmodule ExportTimeCardCSV do
   @moduledoc """
-  Export timecard module.
+  Export timecard csv module.
   """
 
   import Ecto.Query, warn: false
@@ -9,7 +9,7 @@ defmodule ExportTimeCard do
   alias Myapp.Model.TimeCard
 
   @doc """
-  Export CSV.
+  export.
   """
   def export() do
     file = file_name() |> File.open!([:write, :utf8])
