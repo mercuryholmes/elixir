@@ -1,7 +1,7 @@
 
-defmodule ExportTimeCardCSV do
+defmodule Myapp.TimeCardCSV do
   @moduledoc """
-  Export timecard csv module.
+  Timecard csv module.
   """
 
   import Ecto.Query, warn: false

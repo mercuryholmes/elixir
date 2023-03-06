@@ -19,7 +19,7 @@ defmodule Myapp.Model.ListCategory do
   def changeset(list_category, params) do
     IO.inspect params
     list_category
-    |> cast(params, [:name])
+    |> cast(params, [:id, :name])
     |> validate_required([:name])
   end
 

@@ -1,4 +1,4 @@
-defmodule TimeCard do
+defmodule Myapp.TimeCard do
   @moduledoc """
   Timecard module.
   """
